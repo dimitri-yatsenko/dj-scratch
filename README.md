@@ -21,3 +21,5 @@ In a notebook, load SQL magic and connect to the database:
 %load_ext sql
 %sql mysql+pymysql://root:example@db/dev
 ```
+
+A sample notebook demonstrating this setup is available at [notebooks/sql_magic_example.ipynb](notebooks/sql_magic_example.ipynb).
