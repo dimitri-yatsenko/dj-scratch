@@ -9,11 +9,7 @@ This project includes a VS Code development container definition that provides:
 - MySQL database server
 - SQL magic for connecting to the database from notebooks
 
-To start Jupyter inside the container, run:
-
-```bash
-jupyter notebook --ip 0.0.0.0 --no-browser
-```
+When the container starts, a Jupyter Notebook server is launched automatically on port 8888. Simply connect using the Jupyter extension or open the forwarded port in your browser.
 
 In a notebook, load SQL magic and connect to the database:
 

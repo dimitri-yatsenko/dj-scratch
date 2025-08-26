@@ -4,6 +4,7 @@
   "service": "app",
   "workspaceFolder": "/workspace",
   "forwardPorts": [8888],
+  "postStartCommand": "jupyter notebook --ip 0.0.0.0 --no-browser --allow-root &",
   "customizations": {
     "vscode": {
       "extensions": [
