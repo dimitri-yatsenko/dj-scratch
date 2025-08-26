@@ -10,6 +10,13 @@ services:
     command: sleep infinity
     depends_on:
       - db
+    environment:
+      MYSQL_HOST: db
+      MYSQL_PORT: 3306
+      MYSQL_USER: dev
+      MYSQL_PASSWORD: devpass
+      MYSQL_DATABASE: dev
+      DATABASE_URL: mysql+pymysql://dev:devpass@db/dev
     networks:
       - devcontainer
   db:
@@ -18,6 +25,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: example
       MYSQL_DATABASE: dev
+      MYSQL_USER: dev
+      MYSQL_PASSWORD: devpass
     ports:
       - "3306:3306"
     networks:
