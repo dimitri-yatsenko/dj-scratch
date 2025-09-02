@@ -22,6 +22,8 @@ services:
   db:
     image: mysql:8.0
     restart: unless-stopped
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
     environment:
       MYSQL_ROOT_PASSWORD: example
       MYSQL_DATABASE: dev
