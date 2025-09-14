@@ -1,7 +1,7 @@
-FROM mcr.microsoft.com/devcontainers/python:3.12
+FROM mcr.microsoft.com/devcontainers/miniconda:3
 
 RUN apt-get update \
     && apt-get install -y default-mysql-client \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip install --no-cache-dir jupyter ipython-sql sqlalchemy pymysql
+RUN conda install -c conda-forge datajoint jupyter ipython-sql sqlalchemy

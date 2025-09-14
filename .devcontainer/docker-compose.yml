@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   app:
     build:
@@ -15,20 +13,23 @@ services:
       MYSQL_PORT: 3306
       MYSQL_USER: dev
       MYSQL_PASSWORD: devpass
-      MYSQL_DATABASE: dev
-      DATABASE_URL: mysql+pymysql://dev:devpass@db/dev
+      MYSQL_ROOT_PASSWORD: rootpass
+      DJ_HOST: db
+      DJ_USER: root
+      DJ_PASS: rootpass
     networks:
       - devcontainer
   db:
     image: mysql:8.0
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: example
-      MYSQL_DATABASE: dev
+      MYSQL_ROOT_PASSWORD: rootpass
       MYSQL_USER: dev
       MYSQL_PASSWORD: devpass
     ports:
       - "3306:3306"
+    volumes:
+      - ./init-dev-privileges.sql:/docker-entrypoint-initdb.d/init-dev-privileges.sql:ro
     networks:
       - devcontainer
 
