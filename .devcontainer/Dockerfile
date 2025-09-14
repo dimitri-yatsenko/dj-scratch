@@ -7,4 +7,4 @@ RUN apt-get update \
 # Initialize conda for bash shell
 RUN conda init bash
 
-RUN conda install -c conda-forge datajoint jupyter ipython-sql sqlalchemy
+RUN conda install -c conda-forge datajoint jupyter jupysql
