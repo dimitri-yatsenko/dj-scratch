@@ -15,8 +15,8 @@ services:
       MYSQL_PASSWORD: devpass
       MYSQL_ROOT_PASSWORD: rootpass
       DJ_HOST: db
-      DJ_USER: root
-      DJ_PASS: rootpass
+      DJ_USER: dev
+      DJ_PASS: devpass
     networks:
       - devcontainer
   db:
